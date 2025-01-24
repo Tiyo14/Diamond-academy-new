@@ -1,0 +1,59 @@
+canvas {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 5;
+}
+body, html {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+}
+nav {
+    position: relative;
+    z-index: 10;
+}
+footer {
+    margin-top: auto;
+    z-index: 6;
+    margin-bottom: 0%;
+}
+.container {
+    z-index: 6;
+}
+.blb-1 {
+    border-radius: 30% 70% 32% 68% / 62% 30% 70% 38% ;
+}
+.blb-2 {
+    border-radius: 73% 27% 26% 74% / 46% 46% 54% 54% ;
+}
+.blb-3 {
+    border-radius: 24% 76% 75% 25% / 46% 46% 54% 54% ;
+}
+.cool {
+    background-image: linear-gradient(to right, #0F1A2B, #1C2E4A, #52677D, #1C2E4A);
+    background-size: 400% 400%;
+    animation: animate-background 7s linear infinite;
+}
+@keyframes animate-backgroun {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }  
+}
+.btn.night svg {
+    fill: #cccccc; /* Light color for night icon */
+}
+
+.btn.day svg {
+    fill: #cccccc; /* Light color for day icon */
+}
+.text-white {
+    color: #cccccc;
+}

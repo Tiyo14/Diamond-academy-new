@@ -1,0 +1,68 @@
+let crcArray = [];
+    let rad;
+    let x;
+    let dx;
+    let y;
+    let dy;
+
+        colorArray[0] = '#011B2F';
+        colorArray[1] = '#102E4D';
+        colorArray[2] = '#254252';
+
+  
+        colorArray[0] = '#FFD358';
+        colorArray[1] = '#FFB915';
+        colorArray[2] = '#FFC446';
+
+class Circle {
+        constructor(x, y, dx, dy, rad) {
+            this.x = x,
+            this.y = y,
+            this.dx = dx,
+            this.dy = dy,
+            this.rad = rad
+        }
+
+
+        draw() {   
+        randInte = Math.floor(Math.random() * 3);
+        c.beginPath();
+        c.arc(this.x, this.y, this.rad, 0, Math.PI * 2, false)
+        c.strokeStyle = colorArray[randInte]
+        c.stroke();
+        c.fillStyle = colorArray[randInte]
+        c.fill();
+        }
+
+        update() {
+
+        this.x += this.dx;
+        this.y += this.dy;
+        }
+    }
+
+    document.addEventListener('mousemove', (e) => {
+        rad = Math.random() + 1;
+        x = e.clientX
+        dx = (Math.random() -0.5) * 8;
+        y = e.clientY - canva.getBoundingClientRect().top
+        dy = (Math.random() -0.5) * 8;
+        crcArray.push(new Circle(x, y, dx, dy, rad))
+
+        setTimeout(() => {
+            crcArray.shift();
+        }, 300);
+    })
+
+//circle animation & drawing
+
+    for (let iB = 0; iB < crcArray.length; iB++) {
+        crcArray[iB].draw();
+        crcArray[iB].update();
+    }
+
+
+
+
+
+Notes: alt colors -
